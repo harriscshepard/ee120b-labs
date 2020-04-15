@@ -14,9 +14,11 @@
 
 int main(void) {
     /* Insert DDR and PORT initializations */
-
+	DDRB = 0xFF;
+	PORTB = 0x00;
     /* Insert your solution below */
     while (1) {
+	PORTB = 0x0F;	//Writes port B's 8 pins with 00001111
 
     }
     return 1;
