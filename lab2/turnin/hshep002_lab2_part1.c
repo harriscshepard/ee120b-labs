@@ -20,8 +20,6 @@ int main(void) {
 	unsigned char PA0 = 0x00;
 	unsigned char PA1 = 0x00;
 	unsigned char PB0 = 0x00;
-
-	
     /* Insert your solution below */
     while (1) {
 	PA0 = PINA & 0x01;
