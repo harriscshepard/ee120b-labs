@@ -17,22 +17,37 @@ int main(void) {
 	DDRA = 0x00; PORTA = 0xFF;
 	DDRB = 0xFF; PORTB = 0x00;
 
-	unsigned char pA0 = 0x00;
-	unsigned char pA1 = 0x00;
-	unsigned char pB0 = 0x00;
+	//unsigned char pA0 = 0x00;
+	//unsigned char pA1 = 0x00;
+	//unsigned char pB0 = 0x00;
+
+	unsigned char tmp = 0x00;
+	unsigned char cnt = 0x00;	
     /* Insert your solution below */
     while (1) {
-	pA0 = PINA & 0x01;
-	pA1 = PINA & 0x02;
-	if(pA0 == 0x01 && pA1 == 0x00)
+	tmp = 0x01;
+	cnt = 0x00;
+	if(tmp & PINA)
 	{
-		pB0 = 0x01;
-	}	
-	else
-	{
-		pB0 = 0x00;
+		cnt ++;
 	}
-	PORTB = pB0;	//Writes port B's 8 pins with 00001111
+	tmp = 0x02;
+	if(tmp & PINA)
+	{
+		cnt++;
+	}
+	tmp = 0x04;
+        if(tmp & PINA)
+        {
+            cnt++;
+        }
+	tmp = 0x08;
+        if(tmp & PINA)
+        {
+                cnt++;
+        }
+
+	PORTB = cnt;	//Writes port B's 8 pins with 00001111
 
     }
     return 1;
