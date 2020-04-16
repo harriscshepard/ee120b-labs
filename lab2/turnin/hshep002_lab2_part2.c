@@ -22,6 +22,7 @@ int main(void) {
 	//unsigned char pB0 = 0x00;
 
 	unsigned char tmp = 0x00;
+//	unsigned char tmp2 = 0x00;
 	unsigned char cnt = 0x00;	
     /* Insert your solution below */
     while (1) {
@@ -46,8 +47,8 @@ int main(void) {
         {
                 cnt++;
         }
-
-	PORTB = cnt;	//Writes port B's 8 pins with 00001111
+	
+	PORTC = cnt;	//Writes port B's 8 pins with 00001111
 
     }
     return 1;
